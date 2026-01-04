@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+:root {
+  --bg: #f7f7f8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --orange: #f47a14;
+  --lightgray: #c9cbd1;
+  --card: #ffffff;
+  --cta-text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+}
+
+.DropDown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.menuBar {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  font-family:  Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 25px;
+  color: var(--text);
+  padding:15px 25px;
+  background-color: var(--card);
+  border: 2px solid var(--muted);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dropDownBtn, .backwardBtn, .forwardBtn {
+  padding: 4px 8px;
+  border: 2px solid var(--orange);
+  border-radius: 6px;
+  background: var(--lightgray);
+  color: var(--card);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dropDownBtn:hover, .backwardBtn:hover, .forwardBtn:hover {
+  background: var(--orange);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 122, 20, 0.3);
+}
+
+.dropDownBtn:active {
+  transform: translateY(0);
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  left: 0%;
+  top: calc(100% + .5rem);
+  background-color: var(--card);
+  padding: 25px;
+  border: 2px solid var(--muted);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(244, 122, 20, 0.3);
+  opacity: 0; 
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Image Carousel */
+.ImageCarousel {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.images {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.images img {
+  width: 500px;  /* set your desired width */
+  height: 350px; /* set your desired height */
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.frame {
+  width: 500px;  /* match the image width */
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* Carousel Navigation */
+.allNav {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.allNav ul {
+  display: flex;
+  gap: 30px;
+}
+
+.allNav a {
+  display: block;
+  border-radius: 50%;
+  border: 2px solid var(--muted);
+  width: 14px;
+  height: 14px;
+  position: relative;
+  cursor: pointer;
+}
+
+.allNav a::after {
+  content: '';
+  background-color: var(--orange);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-radius: 50%;
+  transition: height 0.3s ease;
+}
+
+.allNav a:hover::after,
+.allNav a.active::after {
+  height: 100%;
+}
