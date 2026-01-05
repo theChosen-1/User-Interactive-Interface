@@ -2,6 +2,8 @@
 
 A simple, interactive web component demonstration showcasing dropdown menus and image carousels built with vanilla HTML, CSS, and JavaScript.
 
+<img src="DUII.png" width="50%" />
+
 ## Live Demo
 
 [View Live Demo](https://theChosen-1.github.io/User-Interactive-Interface/)
